@@ -1,2 +1,45 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+from tkinter import *
+
+pencere=Tk()
+
+
+def giris_yap():
+    onaylama1=entry1.get()
+    onaylama2=entry2.get()
+    if onaylama1 == "Kerem" and onaylama2 == "12345":
+        entry1.destroy()
+        entry2.destroy()
+        button.destroy()
+        karsilama.destroy()
+        sifre.destroy()
+        kullanici_adi.config(text="Giriş Başarılı!!!",fg="blue",font="Arima")
+    else:
+        print("Yanlış şifre veya kullanıcı adı")
+
+
+
+
+karsilama=Label(pencere)
+karsilama.config(text="Hoşgeldiniz!!!",font="Arial")
+karsilama.place(x=20,y=20)
+
+kullanici_adi=Label(pencere)
+kullanici_adi.config(text="Kullanıcı adi")
+kullanici_adi.place(x=20,y=45)
+
+entry1=Entry(pencere)
+entry1.place(x=20,y=65)
+
+sifre=Label(pencere)
+sifre.config(text="Sifre")
+sifre.place(x=20,y=85)
+
+entry2=Entry(pencere)
+entry2.place(x=20,y=105)
+
+button=Button(pencere)
+button.config(text="Giris yap",bg="yellow",fg="orange",command=giris_yap)
+button.place(x=20,y=125)
+
+mainloop()
+
